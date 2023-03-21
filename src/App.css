@@ -80,9 +80,11 @@ body{
   margin-left: 2rem;
 }
 
-.progress-task {
+/* .progress-task,
+.in-progress-task,
+.notes {
   position: relative;
-}
+} */
 
 .team-leader,
 .topic-name,
@@ -101,11 +103,11 @@ body{
 
 
 }
-.btn-group{
-  position: relative;
-  float: right;
-  top: -2.3rem;
-}
+/* .btn-group {
+  position: absolute;
+  top: 0%;
+  right: 32px;
+} */
 
 .progress-input,
 .in-progress-input,
@@ -123,4 +125,8 @@ body{
   top: 8rem;
   border-radius: 20px;
   width: 4rem;
+}
+
+.title-wrapper {
+  width: 160px;
 }

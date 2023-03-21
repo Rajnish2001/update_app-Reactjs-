@@ -138,8 +138,11 @@ function Update() {
                             {
                                 update.map((data, index) => {
                                     return (
-                                        <div className='progress-task'>
-                                            Task {index + 1} : <input type="text" className='progress-input' value={data} onChange={(e) => handleOnChange(index, e)} placeholder='' />
+                                        <div className='progress-task d-flex align-items-center'>
+                                            <div>
+                                                <p className='mb-0'>Progress Task {index + 1}: </p>
+                                            </div>
+                                            <input type="text" className='progress-input' value={data} onChange={(e) => handleOnChange(index, e)} placeholder='' />
                                             <div className='d-flex btn-group'>
                                                 <button className="add-btn" onClick={addInputField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
                                                 <button className="remove-btn" onClick={() => removeInputField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
@@ -152,8 +155,11 @@ function Update() {
                             {
                                 inprogress.map((data, index) => {
                                     return (
-                                        <div className='in-progress-task'>
-                                            In-Progress Task {index + 1} : <input type="text" className='in-progress-input' value={data} onChange={(e) => handleOnInprogressChange(index, e)} placeholder='' />
+                                        <div className='in-progress-task d-flex align-items-center'>
+                                            <div>
+                                                <p>In-progress Task {index + 1}: </p>
+                                            </div>
+                                            <input type="text" className='in-progress-input' value={data} onChange={(e) => handleOnInprogressChange(index, e)} placeholder='' />
                                             <div className='d-flex btn-group'>
                                                 <button className="add-btn" onClick={addInprogressField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
                                                 <button className="remove-btn" onClick={() => removeInprogressField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
@@ -167,8 +173,11 @@ function Update() {
                         {
                             notes.map((note, index) => {
                                 return (
-                                    <div className='notes'>
-                                        Notes-{index + 1} : <input type="text" className='notes-input' value={note} onChange={(e) => handleOnNotesChange(index, e)} placeholder='' />
+                                    <div className='notes d-flex  align-items-center'>
+                                        <div>
+                                                <p className='mb-0'>Notes {index + 1}: </p>
+                                            </div>
+                                        <input type="text" className='notes-input' value={note} onChange={(e) => handleOnNotesChange(index, e)} placeholder='' />
                                         <div className='d-flex btn-group'>
                                             <button className="add-btn" onClick={addNotesField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
                                             <button className="remove-btn" onClick={() => removeNotesField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
