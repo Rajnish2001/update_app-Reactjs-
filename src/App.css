@@ -1,3 +1,6 @@
+body{
+  overflow: hidden;
+}
 .App {
   text-align: center;
 }
@@ -39,14 +42,14 @@
 }
 
 .main .left-side {
-  width: 45%;
+  width: 47%;
   float: left;
   height: 50rem;
   background-color: antiquewhite;
   margin: 2rem;
   border: 1px solid black;
   border-radius: 12px;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .main .right-side {
@@ -77,6 +80,10 @@
   margin-left: 2rem;
 }
 
+.progress-task {
+  position: relative;
+}
+
 .team-leader,
 .topic-name,
 .topic-date-field,
@@ -91,10 +98,13 @@
 .remove-btn {
   border-radius: 15px;
   margin: 4px;
-  float: right;
+
+
+}
+.btn-group{
   position: relative;
+  float: right;
   top: -2.3rem;
-  right: -22px;
 }
 
 .progress-input,

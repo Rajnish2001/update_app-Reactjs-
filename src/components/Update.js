@@ -69,7 +69,7 @@ function Update() {
         }
     }
 
-    const copyhandle = () =>{
+    const copyhandle = () => {
         navigator.clipboard.writeText(updateValue);
         setCopy("copied")
         setTimeout(() => {
@@ -80,15 +80,15 @@ function Update() {
 
 
     var updateData = "";
-    if (update[0]!=="") {
-        updateData = "List of Completed Tasks:-\n\t" 
+    if (update[0] !== "") {
+        updateData = "List of Completed Tasks:-\n\t"
         update.map((each) => {
             updateData += `${each}\n\t`
         })
     }
-    
+
     var inprogressUpdate = ""
-    if (inprogress[0]!=="") {
+    if (inprogress[0] !== "") {
         inprogressUpdate = "List of in progress Tasks:-\n\t"
         inprogress.map((each) => {
             inprogressUpdate += `${each}\n\t`
@@ -96,53 +96,55 @@ function Update() {
     }
 
     var notesData = "";
-    if(notes[0]!==""){
+    if (notes[0] !== "") {
         notesData = "Notes : \n\t";
-        notes.map((each)=>{
-            if (each!=="") {
+        notes.map((each) => {
+            if (each !== "") {
                 notesData += `=> ${each}\n\t`
             }
         })
     }
-    
+
     var thanks = ""
-    if(name!==""){
+    if (name !== "") {
         thanks = `FYI:\n\tI'm leaving for the day.\n\nThanks,\n${name}`
     }
 
     var teamLeader = "";
-    if (teamName!=="") {
+    if (teamName !== "") {
         teamLeader = `Hi ${teamName},`
-    }else{
+    } else {
         teamLeader = "Hello,"
     }
 
-    const data = `${teamLeader}\n\nFollowing are the updates for the ${topic?topic:"<topic>"} as on ${headDate?headDate:"< Date >"}:\n\n${updateData}\n${inprogressUpdate}\n${notesData}\n${thanks}`
+    const data = `${teamLeader}\n\nFollowing are the updates for the ${topic ? topic : "<topic>"} as on ${headDate ? headDate : "< Date >"}:\n\n${updateData}\n${inprogressUpdate}\n${notesData}\n${thanks}`
 
     useEffect(() => {
         setUpdateValue(data)
     }, [data])
-    
+
     return (
         <>
             <div className='main' style={{ backgroundColor: "aliceblue", width: "100%", height: "50rem" }}>
                 <div className="left-side">
-                    <div className='updates' style={{margin:"3rem"}}>
-                        <p>Hello <input type="text" className='team-leader' value={teamName} onChange={(e)=>setTeamName(e.target.value)} placeholder='Your Team Leader Name or Code' />,</p>
+                    <div className='updates' style={{ margin: "3rem" }}>
+                        <p>Hello <input type="text" className='team-leader' value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder='Your Team Leader Name or Code' />,</p>
                         {/* <p>Following are the updates for learning ReactJs as of 16-Mar-2023:</p> */}
                         <p>For Heading:-</p>
                         <p className='topic-date'>Topic : <input type="text" className='topic-name' value={topic} onChange={(e) => setTopic(e.target.value)} placeholder='Your topics here' /></p>
-                        <p className='topic-date'>Date : <input type="date" className='topic-date-field' value={headDate} onChange={(e) => setHeadDate(e.target.value)}/></p>
+                        <p className='topic-date'>Date : <input type="date" className='topic-date-field' value={headDate} onChange={(e) => setHeadDate(e.target.value)} /></p>
                         <div id="addRemove">
                             <p>List of Completed Tasks:-</p>
                             {
                                 update.map((data, index) => {
                                     return (
-                                        <p className='progress-task'>
-                                            Task {index+1} : <input type="text" className='progress-input' value={data} onChange={(e) => handleOnChange(index, e)} placeholder='' />
-                                            <button className="add-btn" onClick={addInputField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
-                                            <button className="remove-btn" onClick={() => removeInputField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
-                                        </p>
+                                        <div className='progress-task'>
+                                            Task {index + 1} : <input type="text" className='progress-input' value={data} onChange={(e) => handleOnChange(index, e)} placeholder='' />
+                                            <div className='d-flex btn-group'>
+                                                <button className="add-btn" onClick={addInputField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
+                                                <button className="remove-btn" onClick={() => removeInputField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
+                                            </div>
+                                        </div>
                                     )
                                 })
                             }
@@ -150,11 +152,13 @@ function Update() {
                             {
                                 inprogress.map((data, index) => {
                                     return (
-                                        <p className='in-progress-task'>
-                                            In-Progress Task {index+1} : <input type="text" className='in-progress-input' value={data} onChange={(e) => handleOnInprogressChange(index, e)} placeholder='' />
-                                            <button className="add-btn" onClick={addInprogressField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
-                                            <button className="remove-btn" onClick={() => removeInprogressField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
-                                        </p>
+                                        <div className='in-progress-task'>
+                                            In-Progress Task {index + 1} : <input type="text" className='in-progress-input' value={data} onChange={(e) => handleOnInprogressChange(index, e)} placeholder='' />
+                                            <div className='d-flex btn-group'>
+                                                <button className="add-btn" onClick={addInprogressField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
+                                                <button className="remove-btn" onClick={() => removeInprogressField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
+                                            </div>
+                                        </div>
                                     )
                                 })
                             }
@@ -163,11 +167,13 @@ function Update() {
                         {
                             notes.map((note, index) => {
                                 return (
-                                    <p className='notes'>
-                                        Notes-{index+1} : <input type="text" className='notes-input' value={note} onChange={(e) => handleOnNotesChange(index, e)} placeholder='' />
-                                        <button className="add-btn" onClick={addNotesField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
-                                        <button className="remove-btn" onClick={() => removeNotesField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
-                                    </p>
+                                    <div className='notes'>
+                                        Notes-{index + 1} : <input type="text" className='notes-input' value={note} onChange={(e) => handleOnNotesChange(index, e)} placeholder='' />
+                                        <div className='d-flex btn-group'>
+                                            <button className="add-btn" onClick={addNotesField}><img src={plus} alt="plus" style={{ width: "15px" }} /> </button>
+                                            <button className="remove-btn" onClick={() => removeNotesField(index)}><img src={minus} alt="minus" style={{ width: "15px" }} /></button>
+                                        </div>
+                                    </div>
                                 )
                             })
                         }
