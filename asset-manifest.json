@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/update_app-Reactjs-/static/css/main.38118ae4.css",
-    "main.js": "/update_app-Reactjs-/static/js/main.2193fa24.js",
+    "main.css": "/update_app-Reactjs-/static/css/main.5879c2d0.css",
+    "main.js": "/update_app-Reactjs-/static/js/main.bb1eb8e4.js",
     "static/js/787.8eadd7fb.chunk.js": "/update_app-Reactjs-/static/js/787.8eadd7fb.chunk.js",
     "index.html": "/update_app-Reactjs-/index.html",
-    "main.38118ae4.css.map": "/update_app-Reactjs-/static/css/main.38118ae4.css.map",
-    "main.2193fa24.js.map": "/update_app-Reactjs-/static/js/main.2193fa24.js.map",
+    "main.5879c2d0.css.map": "/update_app-Reactjs-/static/css/main.5879c2d0.css.map",
+    "main.bb1eb8e4.js.map": "/update_app-Reactjs-/static/js/main.bb1eb8e4.js.map",
     "787.8eadd7fb.chunk.js.map": "/update_app-Reactjs-/static/js/787.8eadd7fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38118ae4.css",
-    "static/js/main.2193fa24.js"
+    "static/css/main.5879c2d0.css",
+    "static/js/main.bb1eb8e4.js"
   ]
 }
